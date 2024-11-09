@@ -29,7 +29,7 @@ try:
     logging.info("E-paper refresh")
 
     logging.info("E-paper refreshes quickly")
-    epd.init()
+    epd.init_fast()
     logging.info("Drawing on the image...")
     image = Image.new('1', (epd.height, epd.width), 255)
     image.rotate(180)
