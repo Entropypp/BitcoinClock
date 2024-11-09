@@ -39,7 +39,7 @@ try:
 		epd.init_fast()
 		#time.sleep(2)
 		#draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
-		draw.text((5, 5),"${}".format(old_i), font = font, fill = 0)
+		draw.text((5, 5),"${}".format(old_i), font = font, fill = 255)
 		epd.displayPartial(epd.getbuffer(image.rotate(180)))
 		draw.text((5, 5),"${}".format(i), font = font, fill = 0)
 		epd.displayPartial(epd.getbuffer(image.rotate(180)))
