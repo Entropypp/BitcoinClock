@@ -23,7 +23,7 @@ import requests
 try:
 	response  = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
 	btc_usd = response.json()
-	btc_usd_price = int(btc_usd['price'])
+	btc_usd_price = round(float(btc_usd['price']))
 except Exception as e:
 	logging.info(e)
 	exit()
