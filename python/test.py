@@ -5,7 +5,7 @@ import os
 font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'fonts')
 lib_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 if os.path.exists(lib_dir):
-    sys.path.append(libdir)
+    sys.path.append(lib_dir)
 
 import logging
 from waveshare_epd import epd2in13_V4
