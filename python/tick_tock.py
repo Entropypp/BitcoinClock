@@ -39,7 +39,7 @@ try:
 
 	epd.init_fast()
 	draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
-	draw.text((5, 5),"${}".format(btcusd), font = font, fill = 0)
+	draw.text((5, 5),"${}".format(btc_usd_price), font = font, fill = 0)
 	epd.display_fast(epd.getbuffer(image.rotate(180)))
 	epd.sleep()
 
