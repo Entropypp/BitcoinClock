@@ -40,13 +40,12 @@ except KeyboardInterrupt:
 
 def get_btc_usd():
 	try:
-	response  = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
-	btc_usd = response.json()
-	return "${}".format(round(float(btc_usd['price'])))
-	
-except Exception as e:
-	logging.info(e)
-	return 0
+		response  = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
+		btc_usd = response.json()
+		return "${}".format(round(float(btc_usd['price'])))
+	except Exception as e:
+		logging.info(e)
+		return 0
 
 def get_font(font_name,max_width,text_string):
 	font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'fonts')
