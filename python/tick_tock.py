@@ -45,7 +45,7 @@ def get_font(font_name,max_width,text_string):
 try:
 	epd = epd2in13_V4.EPD()
 	btc_string = get_btc_usd()
-	font = get_font('Retrospect.ttf',epd.width-10,btc_string)
+	font = get_font('Retrospect.ttf',epd.height-10,btc_string)
 	epd.init_fast()
 	image = Image.new('1', (epd.height, epd.width), 255)
 	draw = ImageDraw.Draw(image)
