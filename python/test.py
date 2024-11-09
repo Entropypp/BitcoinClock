@@ -35,7 +35,7 @@ try:
 	#epd.init_fast()
 	#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
 	
-	for f in ["FLIPclockblack.ttf","Font.ttc","Janky.ttf","LTBinaryNeue.ttf","Nue-Gothic.ttf","Pixel-lcd-machine.ttf","Retrospect.ttf"]
+	for f in ["FLIPclockblack.ttf","Font.ttc","Janky.ttf","LTBinaryNeue.ttf","Nue-Gothic.ttf","Pixel-lcd-machine.ttf","Retrospect.ttf"]:
 		font = ImageFont.truetype(os.path.join(font_dir, f), 120)
 		logging.info(f)
 		for i in range(75000,75123,22):
