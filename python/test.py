@@ -24,7 +24,7 @@ try:
     epd.Clear(0xFF)
     
     # Drawing on the image
-    font = ImageFont.truetype(os.path.join(font_dir, 'FLIPclockblack.ttf'), 80)
+    font = ImageFont.truetype(os.path.join(font_dir, 'Pixel-lcd-machine.ttf'), 100)
     
     logging.info("E-paper refresh")
 
@@ -34,7 +34,7 @@ try:
     for i in range(75000,75123,5):
         image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
         draw = ImageDraw.Draw(image)
-        draw.text((10, 10),str(i), font = font, fill = 0)
+        draw.text((5, 5),str(i), font = font, fill = 0)
         epd.display_fast(epd.getbuffer(image))
         time.sleep(10)
         
