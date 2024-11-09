@@ -21,7 +21,7 @@ import requests
 
 try:
 	epd = epd2in13_V4.EPD()
-    btc_string = get_btc_usd()
+	btc_string = get_btc_usd()
 	font = get_font(font_name,epd.width-10,btc_string)
 	epd.init_fast()
 	draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
