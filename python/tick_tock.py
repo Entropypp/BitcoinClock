@@ -47,6 +47,8 @@ try:
 	btc_string = get_btc_usd()
 	font = get_font('Retrospect.ttf',epd.width-10,btc_string)
 	epd.init_fast()
+	image = Image.new('1', (epd.height, epd.width), 255)
+	draw = ImageDraw.Draw(image)
 	draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
 	draw.text((5, 5),btc_string, font = font, fill = 0)
 	epd.display_fast(epd.getbuffer(image.rotate(180)))
