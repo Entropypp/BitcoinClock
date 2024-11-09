@@ -34,7 +34,7 @@ try:
     for i in range(75000,75123,25):
         image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
         draw = ImageDraw.Draw(image)
-        draw.text((10, 10),str(i), font = font24, fill = 0)
+        draw.text((10, 10),str(i), font = font, fill = 0)
         epd.display_fast(epd.getbuffer(image))
         time.sleep(2)
         
