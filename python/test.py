@@ -4,7 +4,7 @@ import sys
 import os
 font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'fonts')
 lib_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
-if os.path.exists(libdir):
+if os.path.exists(lib_dir):
     sys.path.append(libdir)
 
 import logging
