@@ -31,12 +31,13 @@ try:
     logging.info("E-paper refreshes quickly")
     epd.init()
     logging.info("Drawing on the image...")
+	sleep(10)
     for i in range(75000,75123,22):
         image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
         draw = ImageDraw.Draw(image)
         draw.text((5, 5),"${}".format(i), font = font, fill = 0)
         epd.displayPartial(epd.getbuffer(image))
-        time.sleep(5)
+        time.sleep(10)
 
 
         
