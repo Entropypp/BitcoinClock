@@ -31,7 +31,7 @@ try:
     logging.info("E-paper refreshes quickly")
     epd.init()
     logging.info("Drawing on the image...")
-    sleep(10)
+    time.sleep(10)
     for i in range(75000,75123,22):
         image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
         draw = ImageDraw.Draw(image)
