@@ -24,18 +24,17 @@ try:
     epd.Clear(0xFF)
     
     # Drawing on the image
-    font15 = ImageFont.truetype(os.path.join(font_dir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(font_dir, 'Janky.ttf'), 24)
+    font = ImageFont.truetype(os.path.join(font_dir, 'FLIPclockblack.ttf'), 48)
     
     logging.info("E-paper refresh")
 
     logging.info("E-paper refreshes quickly")
     epd.init_fast()
     logging.info("1.Drawing on the image...")
-    image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
-    draw = ImageDraw.Draw(image)
     for i in range(75000,75123,25):
-        draw.text((110, 90),str(i), font = font24, fill = 0)
+        image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
+        draw = ImageDraw.Draw(image)
+        draw.text((10, 10),str(i), font = font24, fill = 0)
         epd.display_fast(epd.getbuffer(image))
         time.sleep(2)
         
