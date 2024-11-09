@@ -30,7 +30,7 @@ try:
 
 	logging.info("E-paper refreshes quickly")
 	logging.info("Drawing on the image...")
-	image = Image.new('1', (epd.height, epd.width), 255)
+	image = Image.new('1', (epd.height, epd.width), 0)
 	draw = ImageDraw.Draw(image)
 	#epd.init_fast()
 	#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
