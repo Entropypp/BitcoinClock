@@ -24,8 +24,8 @@ try:
     epd.Clear(0xFF)
     
     # Drawing on the image
-    font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Janky.ttf'), 24)
+    font15 = ImageFont.truetype(os.path.join(font_dir, 'Font.ttc'), 15)
+    font24 = ImageFont.truetype(os.path.join(font_dir, 'Janky.ttf'), 24)
     
     logging.info("E-paper refresh")
 
