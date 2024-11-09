@@ -24,7 +24,7 @@ try:
 #	epd.Clear(0xFF)
 	
 	# Drawing on the image
-	font = ImageFont.truetype(os.path.join(font_dir, 'Retrospect.ttf'), 120)
+	
 	
 	logging.info("E-paper refresh")
 
@@ -34,17 +34,21 @@ try:
 	draw = ImageDraw.Draw(image)
 	#epd.init_fast()
 	#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
-	for i in range(75000,75123,22):
-		epd.init_fast()
-		#time.sleep(2)
-		draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
-		draw.text((5, 5),"${}".format(i), font = font, fill = 0)
-		#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
-		epd.display_fast(epd.getbuffer(image.rotate(180)))
-		#epd.displayPartial(epd.getbuffer(image.rotate(180)))
-		#epd.sleep()
-		epd.sleep()
-		time.sleep(5)
+	
+	for f in ["FLIPclockblack.ttf","Font.ttc","Janky.ttf","LTBinaryNeue.ttf","Nue-Gothic.ttf","Pixel-lcd-machine.ttf","Retrospect.ttf"]
+		font = ImageFont.truetype(os.path.join(font_dir, f), 120)
+		logging.info(f)
+		for i in range(75000,75123,22):
+			epd.init_fast()
+			#time.sleep(2)
+			draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
+			draw.text((5, 5),"${}".format(i), font = font, fill = 0)
+			#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
+			epd.display_fast(epd.getbuffer(image.rotate(180)))
+			#epd.displayPartial(epd.getbuffer(image.rotate(180)))
+			#epd.sleep()
+			epd.sleep()
+			time.sleep(5)
 		
 	logging.info("Clear...")
 	epd.init()
