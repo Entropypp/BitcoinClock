@@ -19,9 +19,9 @@ try:
     logging.info("Using epd2in13_V4")
     
     epd = epd2in13_V4.EPD()
-    logging.info("init and Clear")
-    epd.init()
-    epd.Clear(0xFF)
+#    logging.info("init and Clear")
+#    epd.init()
+#    epd.Clear(0xFF)
     
     # Drawing on the image
     font = ImageFont.truetype(os.path.join(font_dir, 'Retrospect.ttf'), 120)
