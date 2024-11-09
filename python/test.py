@@ -33,7 +33,7 @@ try:
     logging.info("Drawing on the image...")
     image = Image.new('1', (epd.height, epd.width), 255)
     draw = ImageDraw.Draw(time_image)
-    epd.displayPartBaseImage(epd.getbuffer(time_image))
+    epd.displayPartBaseImage(epd.getbuffer(image))
     for i in range(75000,75123,22):
         draw.text((5, 5),"${}".format(i), font = font, fill = 0)
         epd.displayPartial(epd.getbuffer(image))
