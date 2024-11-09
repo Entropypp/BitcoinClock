@@ -32,6 +32,7 @@ try:
     epd.init()
     logging.info("Drawing on the image...")
     image = Image.new('1', (epd.height, epd.width), 255)
+    image.rotate(180, PIL.Image.NEAREST, expand = 1)
     draw = ImageDraw.Draw(image)
     epd.displayPartBaseImage(epd.getbuffer(image))
     for i in range(75000,75123,22):
