@@ -34,7 +34,6 @@ try:
 	draw = ImageDraw.Draw(image)
 	#epd.init_fast()
 	#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
-	for f in fonnts
 	for i in range(75000,75123,22):
 		epd.init_fast()
 		#time.sleep(2)
