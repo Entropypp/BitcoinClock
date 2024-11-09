@@ -35,6 +35,7 @@ try:
     draw = ImageDraw.Draw(image)
     epd.displayPartBaseImage(epd.getbuffer(image))
     for i in range(75000,75123,22):
+        draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
         draw.text((5, 5),"${}".format(i), font = font, fill = 0)
         epd.displayPartial(epd.getbuffer(image))
         time.sleep(10)
