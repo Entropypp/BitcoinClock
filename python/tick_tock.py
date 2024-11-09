@@ -18,8 +18,6 @@ logging.basicConfig(level=logging.DEBUG)
 import json 
 import requests 
   
-# defining key/request url 
-key = 
   
 # requesting data from url 
 try:
