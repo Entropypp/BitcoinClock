@@ -36,6 +36,7 @@ try:
 	#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
 	for i in range(75000,75123,22):
 		epd.init_fast()
+		time.sleep(2)
 		draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
 		draw.text((5, 5),"${}".format(i), font = font, fill = 0)
 		#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
@@ -43,7 +44,7 @@ try:
 		#epd.displayPartial(epd.getbuffer(image.rotate(180)))
 		#epd.sleep()
 		epd.sleep()
-		time.sleep(10)
+		time.sleep(5)
 		
 	logging.info("Clear...")
 	epd.init()
