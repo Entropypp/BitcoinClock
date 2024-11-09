@@ -24,7 +24,7 @@ try:
     epd.Clear(0xFF)
     
     # Drawing on the image
-    font = ImageFont.truetype(os.path.join(font_dir, 'Retrospect.ttf'), 130)
+    font = ImageFont.truetype(os.path.join(font_dir, 'Retrospect.ttf'), 120)
     
     logging.info("E-paper refresh")
 
