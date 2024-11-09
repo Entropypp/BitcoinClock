@@ -36,9 +36,9 @@ try:
 	#epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
 	
 	for f in ["FLIPclockblack.ttf","Font.ttc","Janky.ttf","LTBinaryNeue.ttf","Nue-Gothic.ttf","Pixel-lcd-machine.ttf","Retrospect.ttf"]:
-		font = ImageFont.truetype(os.path.join(font_dir, f), 120)
+		font = ImageFont.truetype(os.path.join(font_dir, f), 50)
 		logging.info(f)
-		for i in range(75000,75123,22):
+		for i in range(75000,75123,100):
 			epd.init_fast()
 			#time.sleep(2)
 			draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
