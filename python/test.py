@@ -31,12 +31,12 @@ try:
     logging.info("E-paper refreshes quickly")
     epd.init_fast()
     logging.info("1.Drawing on the image...")
-    for i in range(75000,75123,25):
-        image = Image.new('1', (epd.height, epd.width), 0)  # 255: clear the frame    
+    for i in range(75000,75123,5):
+        image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
         draw = ImageDraw.Draw(image)
         draw.text((10, 10),str(i), font = font, fill = 0)
         epd.display_fast(epd.getbuffer(image))
-        time.sleep(2)
+        time.sleep(10)
         
     logging.info("Clear...")
     epd.init()
