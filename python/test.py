@@ -33,9 +33,10 @@ try:
     image = Image.new('1', (epd.height, epd.width), 255)
     image.rotate(180)
     draw = ImageDraw.Draw(image)
+    epd.init_fast()
+    epd.displayPartBaseImage(epd.getbuffer(image.rotate(180)))
+
     for i in range(75000,75123,22):
-        epd.init_fast()
-        epd.displayPartBaseImage(epd.getbuffer(image))
         draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
         draw.text((5, 5),"${}".format(i), font = font, fill = 0)
         epd.displayPartial(epd.getbuffer(image.rotate(180)))
