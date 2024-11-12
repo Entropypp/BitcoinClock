@@ -41,23 +41,25 @@ def get_font(font_name,max_width,text_string):
 		font_size = font_size+1 if width<max_width else font_size
 	return ImageFont.truetype(os.path.join(font_dir, font_name), font_size)
 
+def epaper_btc_price()
+	try:
+		epd = epd2in13_V4.EPD()
+		btc_string = get_btc_usd()
+		font = get_font('Retrospect.ttf',epd.height-10,btc_string)
+		epd.init_fast()
+		image = Image.new('1', (epd.height, epd.width), 255)
+		draw = ImageDraw.Draw(image)
+		draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
+		draw.text((5, 5),btc_string, font = font, fill = 0)
+		epd.display_fast(epd.getbuffer(image.rotate(180)))
+		epd.sleep()
 
-try:
-	epd = epd2in13_V4.EPD()
-	btc_string = get_btc_usd()
-	font = get_font('Retrospect.ttf',epd.height-10,btc_string)
-	epd.init_fast()
-	image = Image.new('1', (epd.height, epd.width), 255)
-	draw = ImageDraw.Draw(image)
-	draw.rectangle((0, 0, epd.height, epd.width), fill = 255)
-	draw.text((5, 5),btc_string, font = font, fill = 0)
-	epd.display_fast(epd.getbuffer(image.rotate(180)))
-	epd.sleep()
+	except Exception as e:
+		logging.info(e)
+		epd2in13_V4.epdconfig.module_exit(cleanup=True)
+		return False
+		
+	return True
 
-except IOError as e:
-	logging.info(e)
-	
-except KeyboardInterrupt:	
-	logging.info("ctrl + c:")
-	epd2in13_V4.epdconfig.module_exit(cleanup=True)
-	exit()
+####Main		
+epaper_btc_price()
