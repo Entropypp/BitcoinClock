@@ -41,7 +41,7 @@ def get_font(font_name,max_width,text_string):
 		font_size = font_size+1 if width<max_width else font_size
 	return ImageFont.truetype(os.path.join(font_dir, font_name), font_size)
 
-def epaper_btc_price()
+def epaper_btc_price():
 	try:
 		epd = epd2in13_V4.EPD()
 		btc_string = get_btc_usd()
