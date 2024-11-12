@@ -61,7 +61,7 @@ def epaper_btc_price():
 
 def get_image_filename(img_name):
 	image_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'images')
-    return os.path.join(image_dir, img_name))
+    return os.path.join(image_dir, img_name)
 
 def address_is_pwned():
 	return True
