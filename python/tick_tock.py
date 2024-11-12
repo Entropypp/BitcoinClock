@@ -76,7 +76,7 @@ def epaper_pwned():
 		image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
 		bmp = Image.open(get_image_filename('pwned.bmp'))
 		image.paste(bmp, (0,0))    
-		epd.display_fast(epd.getbuffer(image))
+		epd.display_fast(epd.getbuffer(image).rotate(180))
 		epd.sleep()
 		
 	except Exception as e:
