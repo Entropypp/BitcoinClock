@@ -94,5 +94,5 @@ args = parser.parse_args()
 if args.address != '' and  address_pwned(args.address,args):
 	epaper_pwned()
 	send_pwned_alert()
-else 
+else: 
 	epaper_btc_price()
