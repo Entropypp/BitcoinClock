@@ -62,7 +62,7 @@ def get_image_filename(img_name):
 	image_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'images')
 	return os.path.join(image_dir, img_name)
 
-def address_is_pwned(btc-address,sats_expected):
+def address_is_pwned(btc_address,sats_expected):
 	return True
 
 def send_pwned_alert():
