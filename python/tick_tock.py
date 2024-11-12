@@ -91,7 +91,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-a','--address',default='',help="Bitcoin address to watch")
 parser.add_argument('-s','--sats',type=int, default=0,help="Expected sats ")
 args = parser.parse_args()
-if args.address != '' and  address_pwned(args.address,args):
+if args.address != '' and  address_is_pwned(args.address,args):
 	epaper_pwned()
 	send_pwned_alert()
 else: 
