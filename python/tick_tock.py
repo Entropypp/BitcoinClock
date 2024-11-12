@@ -16,12 +16,10 @@ logging.basicConfig(level=logging.DEBUG)
 
 import json 
 import requests 
+ 
+import argparse
+
   
-  
-
-
-
-
 def get_btc_usd():
 	try:
 		response  = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
@@ -61,5 +59,41 @@ def epaper_btc_price():
 		
 	return True
 
-####Main		
-epaper_btc_price()
+def get_image_filename(img_name):
+	image_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'images')
+    return os.path.join(image_dir, img_name))
+
+def address_is_pwned():
+	return True
+
+def send_pwned_alert():
+	return True
+	
+def epaper_pwned():
+	try:
+		epd = epd2in13_V4.EPD()
+		btc_string = get_btc_usd()
+		epd.init_fast()
+		image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+		bmp = Image.open(get_image_filename('pwned.bmp'))
+		image.paste(bmp, (0,0))    
+		epd.display_fast(epd.getbuffer(image))
+		epd.sleep()
+		
+	except Exception as e:
+		logging.info(e).sats
+		epd2in13_V4.epdconfig.module_exit(cleanup=True)
+		return False
+		
+	return True
+
+####Main
+parser = argparse.ArgumentParser()
+parser.add_argument('-a','--address',default='',help="Bitcoin address to watch")
+parser.add_argument('-s','--sats',type=int, default=0,help="Expected sats ")
+args = parser.parse_args()
+if args.address != '' and  address_pwned(args.address,args):
+	epaper_pwned()
+	send_pwned_alert()
+else 
+	epaper_btc_price()
