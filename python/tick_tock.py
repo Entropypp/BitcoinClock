@@ -62,7 +62,7 @@ def get_image_filename(img_name):
 	image_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'images')
 	return os.path.join(image_dir, img_name)
 
-def address_is_pwned():
+def address_is_pwned(btc-address,sats_expected):
 	return True
 
 def send_pwned_alert():
@@ -91,7 +91,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-a','--address',default='',help="Bitcoin address to watch")
 parser.add_argument('-s','--sats',type=int, default=0,help="Expected sats ")
 args = parser.parse_args()
-if args.address != '' and  address_is_pwned(args.address,args):
+if args.address != '' and  address_is_pwned(args.address,args.sata):
 	epaper_pwned()
 	send_pwned_alert()
 else: 
